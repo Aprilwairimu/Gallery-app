@@ -6,18 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
 </head>
-<body>
+{%extends 'base.html'%}
+
+{% block content %}
+{{block.super}}
+<body class="m-5">
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                Nav
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        Categories
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">All</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                    </ul>
+                </div>
             </div>
             <div class="col-md-9">
-                Gallery
+                <div class="row">
+                    
+                    <div class="col-md-4">
+                        <div class="card" >
+                            <img class="image-thumbail"
+                                src="https://media.istockphoto.com/photos/mountain-landscape-picture-id517188688?k=20&m=517188688&s=612x612&w=0&h=i38qBm2P-6V4vZVEaMy_TaTEaoCMkYhvLCysE7yJQ5Q="
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                                    content.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
            
         </div>
 
     </div>
+    {% endblock %}
 </body>
 </html>
