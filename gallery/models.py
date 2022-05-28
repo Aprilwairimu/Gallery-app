@@ -2,7 +2,15 @@ from django.db import models
 
 # Create your models here.
 
-class Cetegory(models.Model):
+class Category(models.Model):
+    name = models.CharField(max_length=100, null=False, blank=False)
+
+    def __str__(self):
+        return self.name
+
+
+
+class Photo(models.Model):
     name = models.CharField(max_length=100, null=False, blank=False)
 
     def __str__(self):
@@ -10,9 +18,18 @@ class Cetegory(models.Model):
 
     def save_image(self):
         self.save()
+    
+    def delete_image(self):
+        self.save()
 
-class Photo(models.Model):
-    name = models.CharField(max_length=100, null=False, blank=False)
+    def update_image(self):
+        self.save()
 
-    def __str__(self):
-        return self.name
+    def get_image_by_id(id):
+        self.save()
+
+    def search_image(Category):
+        self.save()
+
+    def filter_by_location(location):
+        self.save()
