@@ -5,7 +5,7 @@ from django.http  import HttpResponse,Http404
 def gallery(request):
     return render(request,'photos/gallery.html')
 
-def ViewPhoto(request):
+def ViewPhoto(request,pk):
     return render(request,'photos/photo.html')
 
 def addPhoto(request):
