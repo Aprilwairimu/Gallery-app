@@ -32,7 +32,7 @@ class Location(models.Model):
 class Photo(models.Model):
     image = models.ImageField (null=False, blank=False)
     name = models.CharField(max_length=100, null=False, blank=False)
-    description = models.CharField(max_length=100)
+    description = models.CharField(max_length=300)
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
 
@@ -56,3 +56,8 @@ class Photo(models.Model):
 
     # def filter_by_location(location):
     #     self.save()
+
+    # @classmethod
+    # def search_by_name(cls,search_term):
+    #     gallery = cls.objects.filter(name__icontains=search_term)
+    #     return gallery
