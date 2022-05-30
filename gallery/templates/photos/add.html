@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add photo</title>
+</head>
+<body class="m-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <a href="{% url 'gallery' %}" class="btn btn-dark my-3">Go back</a>
+                <div class="card">
+                    <form>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <input name="description" placeholder="Enter a description" 
+                            class="form-control">
+
+                        <div class="form-group m-3">
+                            <label>Select a category</label>
+                            <select name="category" class="form-control">
+                                <option value="none">Select a category....</option>
+                                {% for category in categories%}
+                                <option value="{{category.id}}">{{category.name}}</option>
+                                {% endfor%}
+                        </div>
+
+                        <div class="form-group">
+                            <label>Create a new category</label>
+                            <input name="category_new" placeholder="Create a new category" class="form-control">
+
+                        <div class="form-group m-3">
+                            <label>Upload image</label>
+                            <input name="image" class="form-control-file">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary m-3">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
