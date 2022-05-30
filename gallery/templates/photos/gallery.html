@@ -17,15 +17,18 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <div class="card" style="width: 18rem;">
+                <div class="card">
                     <div class="card-header">
                         Categories
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">All</li>
-                        <li class="list-group-item">Travel</li>
-                        <li class="list-group-item">Nature</li>
-                        <li class="list-group-item">Food</li>
+                        <li class="list-group-item"><a href="{% url 'gallery'%}">All</a></li>
+                       
+
+                        {% for category in categories %}
+                        <li class="list-group-item"><a href="{% url 'gallery'%}?category={{category.name}}"><{{category.name}} /a>
+                        </li>
+
 
                             <a href="{% url 'add' %}" class="btn btn-dark btn-block btn-sm m-1">Add Photo</a>
                         </li>
@@ -34,7 +37,7 @@
             </div>
             <div class="col-md-9">
                 <div class="row">
-                    {% for photo in photos%}
+                    {% for photo in photos %}
                     <div class="col-md-4">
                         <div class="card my-2" >
                             <img class="image-thumbail"
@@ -55,4 +58,4 @@
         </div>
 
     </div>
-    {% endblock %}
+{% endblock %}
