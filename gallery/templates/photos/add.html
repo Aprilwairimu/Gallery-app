@@ -12,7 +12,9 @@
             <div class="col-md-4">
                 <a href="{% url 'gallery' %}" class="btn btn-dark my-3">Go back</a>
                 <div class="card">
-                    <form>
+                    <form method="POST" action="" enctype="multipart/form-data">
+
+                        {% csrf_token %}
                         <div class="form-group">
                             <label>Description</label>
                             <input name="description" placeholder="Enter a description" 
