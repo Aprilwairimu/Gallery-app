@@ -1,10 +1,11 @@
+<title>Add photo</title>
 {%extends 'base.html'%}
 {% block content %}
 {{block.super}}
 <body class="m-5">
     <div class="container">
         <div class="row justify-content-center">
-            <title>Add photo</title>
+            
             <div class="col-md-4">
                 <a href="{% url 'gallery' %}" class="btn btn-dark my-3">Go back</a>
                 <div class="card">
@@ -13,25 +14,28 @@
                         {% csrf_token %}
                         <div class="form-group">
                             <label>Description</label>
-                            <input name="description" placeholder="Enter a description" 
+                            <input required name="description" placeholder="Enter a description" 
                             class="form-control">
 
                         <div class="form-group m-3">
                             <label>Select a category</label>
                             <select name="category" class="form-control">
-                                <option value="none">Select a category....</option>
+                                <option value="none">Select a category...</option>
+
                                 {% for category in categories%}
                                 <option value="{{category.id}}">{{category.name}}</option>
                                 {% endfor%}
+                            </select>
                         </div>
 
                         <div class="form-group">
                             <label>Create a new category</label>
-                            <input name="category_new" placeholder="Create a new category" class="form-control">
+                            <input name="category_new" type="text" placeholder="Create a new category" class="form-control">
+                        </div>
 
                         <div class="form-group m-3">
                             <label>Upload image</label>
-                            <input name="image" class="form-control-file">
+                            <input name="image" type="file" class="form-control-file">
                         </div>
 
                         <button type="submit" class="btn btn-primary m-3">Submit</button>
