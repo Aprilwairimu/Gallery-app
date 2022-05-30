@@ -4,6 +4,7 @@ from .models import Category,Photo
 # Create your views here.
 
 def gallery(request):
+
     categories =Category.objects.all()
     photos =Photo.objects.all()
 
