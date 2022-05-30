@@ -22,7 +22,7 @@
                     Categories
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="{% url 'gallery'%}">All</a></li>
+                    <li class="list-group-item"><a href="#">All</a></li>
 
 
                     {% for category in categories %}
@@ -45,9 +45,11 @@
                             src="{{photo.image.url}}"
                                 alt="card">
                         <div class="card-body">
-                            <small>Category: {{photo.name}}</p>
+                            <small>Category: {{photo.name}} 
+                                <br>
+                            Description: {{photo.description}}</p>
                         </div>
-                        <a href="{% url 'photo' photo.id%}" class="btn btn-outline-dark-sm m-1">view</a>
+                        <a href="{% url 'photo' photo.id%}" class="btn btn-primary">view</a>
                     </div>
                 </div>
                 {% if empty %}
