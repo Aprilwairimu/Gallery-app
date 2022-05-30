@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add photo</title>
-</head>
+{%extends 'base.html'%}
+{% block content %}
+{{block.super}}
 <body class="m-5">
     <div class="container">
         <div class="row justify-content-center">
+            <title>Add photo</title>
             <div class="col-md-4">
                 <a href="{% url 'gallery' %}" class="btn btn-dark my-3">Go back</a>
                 <div class="card">
@@ -44,5 +40,5 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+    {% endblock %}
+    
