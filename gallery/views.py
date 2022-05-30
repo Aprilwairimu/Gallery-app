@@ -1,15 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http  import HttpResponse,Http404
 from .models import Category,Photo
 # Create your views here.
 
 def gallery(request):
+    category = request.GET.get('category')
+    # if category == None:
+    #     else:
+    #         photos =Photo.objects.filter(category__name=category)
 
     categories =Category.objects.all()
     photos =Photo.objects.all()
-
     context ={'categories': categories, 'photos': photos}
-    return render(request,'photos/gallery.html')
+    return render(request,'photos/gallery.html',{'categories': categories, 'photos': photos})
 
 def ViewPhoto(request,pk):
     photos =Photo.objects.get(id=pk)

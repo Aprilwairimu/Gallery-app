@@ -23,11 +23,12 @@
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><a href="{% url 'gallery'%}">All</a></li>
-                    
+
 
                     {% for category in categories %}
                     <li class="list-group-item"><a href="{% url 'gallery'%}?category={{category.name}}"><{{category.name}} /a>
                     </li>
+                    
 
                         <a href="{% url 'add' %}" class="btn btn-dark btn-block btn-sm m-1">Add Photo</a>
                     </li>
@@ -44,7 +45,7 @@
                             src="{{photo.image.url}}"
                                 alt="card">
                         <div class="card-body">
-                            <small>Category: {{photo.Category.name}}</p>
+                            <small>Category: {{photo.name}}</p>
                         </div>
                         <a href="{% url 'photo' photo.id%}" class="btn btn-outline-dark-sm m-1">view</a>
                     </div>
