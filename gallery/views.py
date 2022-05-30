@@ -40,3 +40,6 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'photos/search.html',{"message":message})
+
+def home(request):
+    return render(request, 'home.html')

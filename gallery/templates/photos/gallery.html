@@ -38,12 +38,13 @@
         </div>
         <div class="col-md-9">
             <div class="row">
+
                 {% for photo in photos %}
                 <div class="col-md-4">
                     <div class="card my-2" >
-                        <img class="image-thumbail"
-                            src="{{photo.image.url}}"
-                                alt="card">
+                        <img class="image-thumbail" src="{{photo.image.url}}"
+                                alt="Card image cap">
+                            
                         <div class="card-body">
                             <small>Category: {{photo.name}} 
                                 <br>
